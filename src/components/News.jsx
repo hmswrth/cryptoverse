@@ -9,7 +9,7 @@ import Loader from './Loader';
 const { Text, Title } = Typography;
 const { Option } = Select;
 
-const demoImage = 'http://coinrevolution.com/wp-content/uploads/2020/06/cryptonews.jpg'
+const demoImage = 'https://coinrevolution.com/wp-content/uploads/2020/06/cryptonews.jpg'
 
 const News = ({ simplified }) => {
    const [newsCategory, setNewsCategory] = useState('Cryptocurrency')
@@ -53,7 +53,7 @@ const News = ({ simplified }) => {
                            {news.name}
                         </Title>
                         <img
-                           style={{ maxHeight: "100px", maxWidth:'100px' }}
+                           style={{ height: "100px", width:'100px' }}
                            src={news?.image?.thumbnail?.contentUrl || demoImage}
                            alt=""
                         />

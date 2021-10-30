@@ -59,7 +59,7 @@ const Exchanges = () => {
                            </Row>
                         )}
                      >
-                        <Paragraph>{HTMLReactParser(exchange.description || '')}</Paragraph>
+                        <Paragraph>{HTMLReactParser(exchange.description || 'Description Unavailable')}</Paragraph>
                      </Panel>
                   </Collapse>
                </Col>
