@@ -7,6 +7,7 @@ import { Col, Row, Typography, Select } from 'antd';
 
 import { useGetCryptoDetailsQuery , useGetCryptoHistoryQuery} from '../services/cryptoAPI';
 import LineChart from './LineChart';
+import Loader from './Loader';
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -20,9 +21,9 @@ const CryptoDetails = () => {
 
    // console.log(data);
 
-   if (isFetching) return 'Loading...';
+   if (isFetching) return <Loader />;
 
-   const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
+   const time = ['24h', '7d', '30d', '1y', '3m', '3y', '5y'];
 
    const stats = [
       { title: 'Price to USD', value: `$ ${cryptoDetails.price && millify(cryptoDetails.price)}`, icon: <DollarCircleOutlined /> },
@@ -53,12 +54,13 @@ const CryptoDetails = () => {
             </p>
          </Col>
          <Select
+            bordered={false}
             defaultValue='7d'
             className='select-timeperiod'
             placeholder='Select Time Period'
             onChange={(value) => setTimePeriod(value)}
          >
-            {time.map((date) => <Option key={date}>{date}</Option> )}
+            {time.map((date) => <Option key={date}><Text strong>{date}</Text></Option> )}
          </Select>
          {/* line chart */}
          <LineChart coinHistory = {coinHistory} currentPrice = {millify(cryptoDetails.price)} coinName={cryptoDetails.name}/>
@@ -105,7 +107,7 @@ const CryptoDetails = () => {
          <Col className='coin-desc-link'>
             <Row className='coin-desc'>
                   <Title level={3} className='coin-details-heading'>
-                     What is {cryptoDetails.name}?
+                     <h3>What is {cryptoDetails.name}?</h3>
                      {HTMLReactParser(cryptoDetails.description)}
                   </Title>
             </Row>

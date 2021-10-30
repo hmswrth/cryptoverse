@@ -4,6 +4,7 @@ import { useGetExchangesQuery } from '../services/cryptoAPI';
 import HTMLReactParser from 'html-react-parser';
 import { Typography } from 'antd';
 import millify from 'millify';
+import Loader from './Loader';
 
 const Exchanges = () => {
 
@@ -11,7 +12,7 @@ const Exchanges = () => {
    const { Title, Text, Paragraph } = Typography;
 
    const { data: exchanges, isFetching } = useGetExchangesQuery();
-   if (isFetching) return 'Loading...';
+   if (isFetching) return <Loader />;
    console.log(exchanges);
 
    // console.log(Object.values(exchanges?.data?.exchanges)[0].uuid);

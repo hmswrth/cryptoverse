@@ -21,7 +21,7 @@ function Navbar() {
    }, []);
 
    useEffect(() => {
-      if (screenSize < 768) {
+      if (screenSize < 800) {
          setActiveMenu(false);
       }
       else {
@@ -29,6 +29,9 @@ function Navbar() {
       }
    }, [screenSize])
 
+   const handleNavBarToggle = () => {
+      if(screenSize < 800) setActiveMenu(!activeMenu);
+   }
 
    return (
       <div className='nav-container'>
@@ -38,22 +41,22 @@ function Navbar() {
                <Link to='/'>Cryptoverse</Link>
             </Typography.Title>
             {/* include a button class here */}
-            <Button className='menu-control-container' onClick = {() => setActiveMenu(!activeMenu)}>
+            <Button className='menu-control-container' onClick = {() => handleNavBarToggle()}>
                <MenuOutlined />
             </Button>
          </div>
          {activeMenu && (
             <Menu theme='dark'>
-               <Menu.Item icon={<HomeOutlined />} key='home'>
+               <Menu.Item icon={<HomeOutlined />} key='home' onClick = {() => handleNavBarToggle()}>
                   <Link to='/'>Home</Link>
                </Menu.Item>
-               <Menu.Item icon={<FundOutlined />} key='cryptocurrencies'>
+               <Menu.Item icon={<FundOutlined />} key='cryptocurrencies' onClick = {() => handleNavBarToggle()}>
                   <Link to='/cryptocurrencies'>Cryptocurrrencies</Link>
                </Menu.Item>
-               <Menu.Item icon={<MoneyCollectOutlined />} key='exchanges'>
+               <Menu.Item icon={<MoneyCollectOutlined />} key='exchanges' onClick = {() => handleNavBarToggle()}>
                   <Link to='/exchanges'>Exchanges</Link>
                </Menu.Item>
-               <Menu.Item icon={<BulbOutlined />} key='news'>
+               <Menu.Item icon={<BulbOutlined />} key='news' onClick = {() => handleNavBarToggle()}>
                   <Link to='/news'>News</Link>
                </Menu.Item>
             </Menu>
