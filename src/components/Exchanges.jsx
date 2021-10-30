@@ -13,9 +13,6 @@ const Exchanges = () => {
 
    const { data: exchanges, isFetching } = useGetExchangesQuery();
    if (isFetching) return <Loader />;
-   console.log(exchanges);
-
-   // console.log(Object.values(exchanges?.data?.exchanges)[0].uuid);
    return (
       <>
          <Row style={{textAlign:'center'}} >
