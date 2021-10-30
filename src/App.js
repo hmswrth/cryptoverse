@@ -37,8 +37,8 @@ const app = () => {
 
                <div className='footer'>
                   <Typography.Title level={5} style={{ color: 'white', textAlign: 'Center' }}>
-                     Cryptoverse <br />
-                     All rights reserved
+                     Cryptoverse <br/>
+                     ©2021 Hemanth Mudra. All rights reserved.
                   </Typography.Title>
                   <Space>
                      <Link to='/'>Home</Link>
