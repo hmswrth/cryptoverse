@@ -14,7 +14,7 @@ const app = () => {
             </div>
             <div className='main'>
                <Layout>
-                  <div className="routes">
+                  <div>
                      <Switch>
                         <Route exact path="/" >
                            <Homepage />
