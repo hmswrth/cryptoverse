@@ -18,6 +18,7 @@ function Loader() {
         animationData={loadingAnimation}
         play
         loop
+        speed={2}
       />
     </div>
   );
