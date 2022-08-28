@@ -24,7 +24,7 @@ a:hover {
 
 .navbar {
   flex: 0.2;
-  background-color: rgb(0, 21, 41);
+  /* background-color: rgb(0, 21, 41); */
 }
 
 .main {
@@ -36,12 +36,15 @@ a:hover {
   padding: 20px;
 }
 .nav-container {
-  position: fixed;
+  /* position: fixed; */
+  width: 100%;
   left: 0;
   margin: 10px;
   height: 100vh;
   margin: 0px;
   background-color: rgb(0, 21, 41);
+  height: 100%;
+  
 }
 
 .logo-container {
@@ -52,11 +55,15 @@ a:hover {
   width: 100%;
 }
 .logo {
-  margin: 0 0 0 15px;
+  margin: 0 0 0 15px !important;
 }
 .logo a {
-  color: white;
+background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
+
 .menu-control-container {
   display: none !important;
   position: absolute !important;
@@ -383,8 +390,8 @@ a:hover {
   min-width: 250px;
 }
 
-.ant-card{
-   border-radius: .35rem !important;
+.ant-card {
+  border-radius: 0.35rem !important;
 }
 
 .crypto-card .crypto-image {
@@ -402,4 +409,12 @@ a:hover {
   flex-direction: column;
   padding: 20px;
   align-items: center;
+}
+
+.ant-typography{
+  text-transform: lowercase;
+}
+
+.heading, .home-title, .show-more{
+  font-size: 1.3rem !important;
 }

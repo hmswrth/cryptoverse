@@ -38,7 +38,7 @@ function Navbar() {
          <div className='logo-container'>
             <Avatar src={logo} size='large' />
             <Typography.Title level={2} className='logo'>
-               <Link to='/'>Cryptoverse</Link>
+               <Link to='/'>cryptoverse</Link>
             </Typography.Title>
             {/* include a button class here */}
             <Button className='menu-control-container' onClick = {() => handleNavBarToggle()}>
@@ -48,16 +48,16 @@ function Navbar() {
          {activeMenu && (
             <Menu theme='dark'>
                <Menu.Item icon={<HomeOutlined />} key='home' onClick = {() => handleNavBarToggle()}>
-                  <Link to='/'>Home</Link>
+                  <Link to='/'>home</Link>
                </Menu.Item>
                <Menu.Item icon={<FundOutlined />} key='cryptocurrencies' onClick = {() => handleNavBarToggle()}>
-                  <Link to='/cryptocurrencies'>Cryptocurrrencies</Link>
+                  <Link to='/cryptocurrencies'>cryptocurrrencies</Link>
                </Menu.Item>
                <Menu.Item icon={<MoneyCollectOutlined />} key='exchanges' onClick = {() => handleNavBarToggle()}>
-                  <Link to='/exchanges'>Exchanges</Link>
+                  <Link to='/exchanges'>exchanges</Link>
                </Menu.Item>
                <Menu.Item icon={<BulbOutlined />} key='news' onClick = {() => handleNavBarToggle()}>
-                  <Link to='/news'>News</Link>
+                  <Link to='/news'>news</Link>
                </Menu.Item>
             </Menu>
          )}
