@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {Line} from 'react-chartjs-2';
 import { Col, Row,  Typography } from 'antd';
 
@@ -8,19 +8,18 @@ const LineChart = ({coinHistory, currentPrice, coinName}) => {
    const coinPrice = [];
    const coinTimeStamp = [];
 
-   for (let i = 0; i < coinHistory?.data?.history?.length; i+=1) {
-         coinPrice.push(coinHistory?.data?.history[i].price);
-   }
+   //process the timestamp and coin price for the price chart
+   coinHistory?.data?.history?.forEach((item, _) => {
+      coinPrice.push(item?.price)
+      coinTimeStamp.push(new Date(item?.timestamp * 1000).toLocaleDateString())
+   })
 
-   for (let i = 0; i < coinHistory?.data?.history?.length; i+=1) {
-      coinTimeStamp.push(new Date(coinHistory?.data?.history[i].timestamp).toLocaleDateString());
-   }
 
    const data = {
       labels : coinTimeStamp,
       datasets: [
          {
-            label: 'Price In USD',
+            label: 'price in USD',
             data: coinPrice,
             fill: false,
             backgroundColor: '#0071bd',
