@@ -327,6 +327,13 @@ background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, F
   width: 70%;
 }
 
+.news-image{
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: .35rem;
+}
+
 .news-image-container .img {
   width: 100px;
   height: 100px;
